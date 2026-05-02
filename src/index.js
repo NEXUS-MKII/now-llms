@@ -1,52 +1,3 @@
-const ROBOTS = `# robots.txt — nowgroup.co.nz
-# NOW Group | Network Intelligence Engine
-# Updated: May 2026
-
-# ── STANDARD CRAWLERS ──
-User-agent: *
-Allow: /
-
-# Block Kajabi admin and system paths
-Disallow: /admin/
-Disallow: /api/
-Disallow: /checkout/
-Disallow: /orders/
-Disallow: /account/
-Disallow: /login/
-Disallow: /password/
-Disallow: /cart/
-Disallow: /tags/
-Disallow: /?*
-
-# ── AI CRAWLERS — FULL ACCESS ──
-User-agent: GPTBot
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: GoogleExtended
-Allow: /
-
-User-agent: cohere-ai
-Allow: /
-
-User-agent: anthropic-ai
-Allow: /
-
-User-agent: CCBot
-Allow: /
-
-# ── SITEMAP ──
-Sitemap: https://www.nowgroup.co.nz/sitemap.xml
-
-# ── AI CONTEXT FILES ──
-# https://www.nowgroup.co.nz/llms.txt
-# https://www.nowgroup.co.nz/llms-full.txt`;
-
 const LLMS = `# NOW Group
 
 > Australasia's first intelligently engineered partner network. Based in Christchurch, New Zealand. Operating across NZ and Australia.
@@ -132,16 +83,6 @@ Last updated: May 2026`;
 export default {
   async fetch(request) {
     const path = new URL(request.url).pathname;
-
-    if (path === '/robots.txt') {
-      return new Response(ROBOTS, {
-        status: 200,
-        headers: {
-          'Content-Type': 'text/plain; charset=utf-8',
-          'Cache-Control': 'public, max-age=86400',
-        },
-      });
-    }
 
     if (path === '/llms.txt') {
       return new Response(LLMS, {
