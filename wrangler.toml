@@ -4,5 +4,13 @@ compatibility_date = "2024-01-01"
 
 routes = [
   { pattern = "nowgroup.co.nz/llms.txt", zone_name = "nowgroup.co.nz" },
-  { pattern = "nowgroup.co.nz/llms-full.txt", zone_name = "nowgroup.co.nz" }
+  { pattern = "nowgroup.co.nz/llms-full.txt", zone_name = "nowgroup.co.nz" },
+  { pattern = "nowgroup.co.nz/robots.txt", zone_name = "nowgroup.co.nz" }
+]
+
+[env.production]
+routes = [
+  { pattern = "nowgroup.co.nz/llms.txt", zone_name = "nowgroup.co.nz" },
+  { pattern = "nowgroup.co.nz/llms-full.txt", zone_name = "nowgroup.co.nz" },
+  { pattern = "nowgroup.co.nz/robots.txt", zone_name = "nowgroup.co.nz" }
 ]
